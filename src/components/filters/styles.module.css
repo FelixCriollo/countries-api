@@ -1,0 +1,17 @@
+.filter {
+  display: flex;
+  justify-content: space-between;
+  padding-block: 1.5rem 2rem;
+} 
+
+.selector {
+  background: red;
+}
+
+.option {
+  position: absolute;
+  top: 3em;
+  width: 100%;
+  background: red;
+  
+}

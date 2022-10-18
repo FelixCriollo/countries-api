@@ -5,14 +5,13 @@ import style from "./styles.module.css"
 export const Card: FC<country> = ({ 
   name, capital, flag, population, region 
 }) => {
+
+  const populationFormat = (n: number) => new Intl.NumberFormat("en-US").format(n) 
+
   return (
     <div className={style.card}>
-      <div>
-        <div className={style["img__container-aux"]} style={{background: `url(${flag})`}}></div>
-        
-        <div className={style.img__container}>
-          <img className={style.img} src={flag} alt={name} />
-        </div>
+      <div className={style.img__container}>
+        <img src={flag} alt={name} />
       </div>
 
       <div className={style.card__content}>
@@ -20,7 +19,7 @@ export const Card: FC<country> = ({
         
         <p className={style.data}>
           Population: 
-          <span className={style.value}>{population}</span>
+          <span className={style.value}>{populationFormat(population)}</span>
         </p>
         <p className={style.data}>
           Region: 
