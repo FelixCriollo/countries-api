@@ -4,7 +4,7 @@ import { region } from "@types"
 function countriesResult(countries: country[]): country[] {
   return countries.map((c: any) => {
     return {
-      name: c.name.official,
+      name: c.name.common,
       population: c.population,
       region: c.region,
       capital: c.capital,
@@ -14,28 +14,36 @@ function countriesResult(countries: country[]): country[] {
 }
 
 type API = {
-  allCountry: () => Promise<country[]>,
-  countryByRegion: (region: region) => Promise<country[]>,
-  countryByName: (name: string) => Promise<country[]>,
+  all: () => Promise<country[]>,
+  byRegion: (region: region) => Promise<country[]>,
+  byName: (name: string) => Promise<country[]>,
 }
 
 export const countryAPI = (): API => {
   return {
-    allCountry: async (): Promise<country[]> => {
+    all: async (): Promise<country[]> => {
       const response = await fetch("https://restcountries.com/v3.1/all")
       const countries = await response.json()
       return countriesResult(countries)
     },
-    countryByName: async (name: string): Promise<country[]> => {
-      const response = await fetch(`https://restcountries.com/v3.1/name/${name}`)
-      const countries = await response.json()
-      return countriesResult(countries)
+    byName: async (name: string): Promise<country[]> => {
+      try {
+        const response = await fetch(`https://restcountries.com/v3.1/name/${name}`)
+        const countries = await response.json()
+        return countriesResult(countries)
+      } catch (error) {
+        return [];
+      }
     },
-    countryByRegion: async (region: region): Promise<country[]> => {
-      const response = await fetch(`https://restcountries.com/v3.1/region/${region}`)
-      const countries = await response.json()
-      
-      return countriesResult(countries)
+    byRegion: async (region: region): Promise<country[]> => {
+      try {
+        const response = await fetch(`https://restcountries.com/v3.1/region/${region}`)
+        const countries = await response.json()
+        
+        return countriesResult(countries)
+      } catch (error) {
+        return [];
+      }
     },
   }
 }

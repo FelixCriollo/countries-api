@@ -10,7 +10,7 @@ export const CountriesProvider: FC<Props> = ({children}) => {
   const [loading, setLoading] = useState<boolean>(true)
   const [countries, setCountries] = useState<country[]>([])
 
-  const handleCountries = async (fn: Promise<country[]>): Promise<void> => {
+  const handleCountries = (fn: Promise<country[]>) => {
     setLoading(true)
 
     fn.then((res: any) => {
@@ -20,7 +20,7 @@ export const CountriesProvider: FC<Props> = ({children}) => {
   }
 
   useEffect(() => {
-    countryAPI().allCountry().then(res => {
+    countryAPI().all().then(res => {
       setLoading(false)
       setCountries(res)
     })

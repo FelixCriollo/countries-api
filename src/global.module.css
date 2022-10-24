@@ -6,3 +6,8 @@
 .paragraph {
   color: red;
 }
+
+.text {
+  color: var(--text);
+  fill: var(--input);
+}
