@@ -14,15 +14,15 @@ export const Filter = () => {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
     if (search !== "") {
-      handleCountries(countryAPI().byName(search))
+      handleCountries(countryAPI.byName(search))
     }
   } 
 
   const handleSelect = (e: ChangeEvent<HTMLSelectElement>) => {
     const value = e.target.value
     value === "all" 
-      ? handleCountries(countryAPI().all())
-      : handleCountries(countryAPI().byRegion(value as region))
+      ? handleCountries(countryAPI.all())
+      : handleCountries(countryAPI.byRegion(value as region))
   }
 
   return (

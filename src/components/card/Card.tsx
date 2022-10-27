@@ -1,5 +1,4 @@
 import { FC } from "react"
-import Skeleton, {SkeletonTheme} from "react-loading-skeleton"
 import 'react-loading-skeleton/dist/skeleton.css'
 import { country } from "@types"
 import style from "./styles.module.css"

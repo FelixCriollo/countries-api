@@ -4,10 +4,12 @@ specifiers:
   '@types/node': ^18.8.5
   '@types/react': ^18.0.17
   '@types/react-dom': ^18.0.6
+  '@types/react-router-dom': ^5.3.3
   '@vitejs/plugin-react': ^2.1.0
   react: ^18.2.0
   react-dom: ^18.2.0
   react-loading-skeleton: ^3.1.0
+  react-router-dom: ^6.4.2
   typescript: ^4.6.4
   vite: ^3.1.0
 
@@ -15,11 +17,13 @@ dependencies:
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-loading-skeleton: 3.1.0_react@18.2.0
+  react-router-dom: 6.4.2_biqbaboplfbrettd7655fr4n2y
 
 devDependencies:
   '@types/node': 18.8.5
   '@types/react': 18.0.21
   '@types/react-dom': 18.0.6
+  '@types/react-router-dom': 5.3.3
   '@vitejs/plugin-react': 2.1.0_vite@3.1.8
   typescript: 4.8.4
   vite: 3.1.8
@@ -349,6 +353,15 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
 
+  /@remix-run/router/1.0.2:
+    resolution: {integrity: sha512-GRSOFhJzjGN+d4sKHTMSvNeUPoZiDHWmRnXfzaxrqe7dE/Nzlc8BiMSJdLDESZlndM7jIUrZ/F4yWqVYlI0rwQ==}
+    engines: {node: '>=14'}
+    dev: false
+
+  /@types/history/4.7.11:
+    resolution: {integrity: sha512-qjDJRrmvBMiTx+jyLxvLfJU7UznFuokDv4f3WRuriHKERccVpFU+8XMQUAbDzoiJCsmexxRExQeMwwCdamSKDA==}
+    dev: true
+
   /@types/node/18.8.5:
     resolution: {integrity: sha512-Bq7G3AErwe5A/Zki5fdD3O6+0zDChhg671NfPjtIcbtzDNZTv4NPKMRFr7gtYPG7y+B8uTiNK4Ngd9T0FTar6Q==}
     dev: true
@@ -360,6 +373,21 @@ packages:
   /@types/react-dom/18.0.6:
     resolution: {integrity: sha512-/5OFZgfIPSwy+YuIBP/FgJnQnsxhZhjjrnxudMddeblOouIodEQ75X14Rr4wGSG/bknL+Omy9iWlLo1u/9GzAA==}
     dependencies:
+      '@types/react': 18.0.21
+    dev: true
+
+  /@types/react-router-dom/5.3.3:
+    resolution: {integrity: sha512-kpqnYK4wcdm5UaWI3fLcELopqLrHgLqNsdpHauzlQktfkHL3npOSwtj1Uz9oKBAzs7lFtVkV8j83voAz2D8fhw==}
+    dependencies:
+      '@types/history': 4.7.11
+      '@types/react': 18.0.21
+      '@types/react-router': 5.1.19
+    dev: true
+
+  /@types/react-router/5.1.19:
+    resolution: {integrity: sha512-Fv/5kb2STAEMT3wHzdKQK2z8xKq38EDIGVrutYLmQVVLe+4orDFquU52hQrULnEHinMKv9FSA6lf9+uNT1ITtA==}
+    dependencies:
+      '@types/history': 4.7.11
       '@types/react': 18.0.21
     dev: true
 
@@ -800,6 +828,29 @@ packages:
     resolution: {integrity: sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /react-router-dom/6.4.2_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-yM1kjoTkpfjgczPrcyWrp+OuQMyB1WleICiiGfstnQYo/S8hPEEnVjr/RdmlH6yKK4Tnj1UGXFSa7uwAtmDoLQ==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      react: '>=16.8'
+      react-dom: '>=16.8'
+    dependencies:
+      '@remix-run/router': 1.0.2
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      react-router: 6.4.2_react@18.2.0
+    dev: false
+
+  /react-router/6.4.2_react@18.2.0:
+    resolution: {integrity: sha512-Rb0BAX9KHhVzT1OKhMvCDMw776aTYM0DtkxqUBP8dNBom3mPXlfNs76JNGK8wKJ1IZEY1+WGj+cvZxHVk/GiKw==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      react: '>=16.8'
+    dependencies:
+      '@remix-run/router': 1.0.2
+      react: 18.2.0
+    dev: false
 
   /react/18.2.0:
     resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
