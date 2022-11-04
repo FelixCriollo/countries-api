@@ -1,0 +1,34 @@
+.header_shadow {
+  box-shadow: var(--shadow);
+}
+
+.header {
+  width: min(80rem, 92%);
+  margin: auto;
+  padding: 1.95rem 0 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dark_mode { 
+  font-size: 0.875rem;
+}
+
+.svg {
+  fill: var(--text);
+}
+
+.dark_mode__cont {
+  display: flex;
+  gap: 1em;
+}
+
+@media (min-width: 670px) {
+  .dark_mode { 
+    font-size: 0.75rem;
+  }
+  .header-shadow {
+    margin-bottom: 3rem;
+  }
+}

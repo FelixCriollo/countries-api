@@ -1,1 +1,1 @@
-export * from "./allCountry"
+export * from "./countryAPI"

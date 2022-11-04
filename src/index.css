@@ -9,6 +9,8 @@
     --background: hsl(207, 26%, 17%);
     --element: hsl(209, 23%, 22%);
     --text: hsl(0, 0%, 100%);
+    --input: hsl(0, 0%, 100%);
+    --shadow: 0px 0px 4px 4px rgba(43, 57, 69, 0.25);
   }
 }
 
@@ -18,7 +20,23 @@
     --element: hsl(0, 0%, 100%);
     --text: hsl(200, 15%, 8%);
     --input: hsl(0, 0%, 52%);
+    --shadow: 0px 0px 4px 4px rgba(255, 255, 255, 0.25);
   }
+}
+
+.light-theme {
+  --background: hsl(0, 0%, 98%);
+  --element: hsl(0, 0%, 100%);
+  --text: hsl(200, 15%, 8%);
+  --input: hsl(0, 0%, 52%);
+  --shadow: 0px 0px 4px 4px rgba(255, 255, 255, 0.25);
+}
+
+.dark-theme {
+  --background: hsl(207, 26%, 17%);
+  --element: hsl(209, 23%, 22%);
+  --text: hsl(0, 0%, 100%);
+  --shadow: 0px 0px 4px 4px rgba(43, 57, 69, 0.25);
 }
 
 * {
@@ -39,4 +57,34 @@ img {
 
 p, h1, h2, h3{
   color:  var(--text);
+}
+
+h1 {
+  font-weight: var(--bold);
+  font-size: 0.875rem;
+}
+
+header {
+  background: var(--element);
+}
+
+button, input, select {
+  background: none;
+  outline: none;
+  border: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+li, ul {
+  list-style: none;
+}
+
+
+@media (min-width: 670px) {
+  h1 {
+    font-size: 1.5rem;
+  }
 }
