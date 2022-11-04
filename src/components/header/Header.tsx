@@ -1,6 +1,5 @@
-import global from "@/global.module.css"
-import style from "./styles.module.css"
 import { DarkModeIcon } from "./darkModeIcon"
+import style from "./styles.module.css"
 
 export const Header = () => {
   const handleDarkMode = () => {
@@ -17,7 +16,7 @@ export const Header = () => {
 
   return (
     <header className={style.header_shadow}>
-      <div className={`${global.container} ${style.header}`}>
+      <div className={style.header}>
         <h1>Where in the world?</h1>
 
         <button

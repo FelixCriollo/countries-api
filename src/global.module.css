@@ -1,5 +1,5 @@
 .container {
-  width: min(80rem, 90%);
+  width: 85%;
   margin: auto;
 }
 
@@ -10,4 +10,11 @@
 .text {
   color: var(--text);
   fill: var(--input);
+}
+
+@media (min-width: 670px) {
+  .container {
+    width: min(80rem, 92%);
+    margin: auto;
+  }
 }

@@ -1,5 +1,6 @@
 export type country = {
   name: string
+  nativeName: string
   population: number
   region: string
   capital: string

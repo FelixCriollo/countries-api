@@ -74,6 +74,14 @@ button, input, select {
   border: none;
 }
 
+a {
+  text-decoration: none;
+}
+
+li, ul {
+  list-style: none;
+}
+
 
 @media (min-width: 670px) {
   h1 {

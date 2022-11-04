@@ -22,6 +22,7 @@ const countriesContext = createContext<countryContextType | null>(null)
 export const CountriesProvider: FC<Props> = ({children}) => {
   const [loading, setLoading] = useState<boolean>(true)
   const [countries, setCountries] = useState<country[]>([])
+  const [allCountries, setAllCountries] = useState<country[]>([])
   const [currentCountry, setCurrentCountry] = useState<country>(initialValue)
 
   const handleCountries = (fn: Promise<country[]>) => {
@@ -29,7 +30,7 @@ export const CountriesProvider: FC<Props> = ({children}) => {
 
     fn.then((res: country[]) => {
       setLoading(false)
-      setCountries(res)  
+      setCountries(res)
     })
   }
   
@@ -37,6 +38,7 @@ export const CountriesProvider: FC<Props> = ({children}) => {
     countryAPI.all().then(res => {
       setLoading(false)
       setCountries(res)
+      setAllCountries(res)
     })
   }, [])
 
@@ -46,7 +48,8 @@ export const CountriesProvider: FC<Props> = ({children}) => {
       countries,
       handleCountries,
       currentCountry,
-      setCurrentCountry 
+      setCurrentCountry,
+      allCountries
     }}>
       {children}
     </countriesContext.Provider>

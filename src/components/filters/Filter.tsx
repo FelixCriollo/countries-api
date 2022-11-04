@@ -2,8 +2,8 @@ import { region } from "@types"
 import { useCountries } from "@/context/countriesContext"
 import { countryAPI } from "@/api"
 import { ChangeEvent, FormEvent, useState } from "react"
+import SearchSVG from "./SearchSVG"
 import style from "./styles.module.css"
-import SearchSVG from "@/assets/SearchSVG"
 
 const regions: region[] = ["Africa", "America", "Asia", "Europe", "Oceania"]
 

@@ -12,8 +12,11 @@ function countriesResult(countries: country[]): country[] {
       currencies = currencyArr.map((c: any) => c.name)
     }
 
+    const nativeName: any = c.name.nativeName ? Object.values(c.name.nativeName) : "Not Found"
+
     return {
       name: c.name.common,
+      nativeName: nativeName[0].common, 
       population: c.population,
       region: c.region,
       capital: c.capital,
